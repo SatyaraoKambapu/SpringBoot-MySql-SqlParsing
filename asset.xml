@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assets>
+
+	<asset ID="_f1d9b9e7-cdc9-4564-a34d-02f08372cd14" repr="ORG">
+		<attribute value="select email_address from ms_example.USER_NEW" name="$stepTechnicalDetails" />
+		<attribute value="Table input" name="tinput" />
+		<attribute value="RBO" name="RBO" />
+	</asset>
+	
+	<asset ID="12345" repr="RRR">
+		<attribute value="Table input" name="tinput" />
+		<attribute value="RBO" name="RBO" />
+	</asset>
+
+</assets>
