@@ -2,6 +2,8 @@ package com.example.demo;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -48,9 +50,8 @@ public class MainController {
 	}
 
 	@GetMapping(path = "/queryForUsers")
-	public @ResponseBody Iterable<String> getUsers() {
-		// This returns a JSON or XML with the users
-		return userRepository.sqlParseAndGetResults(extractQuery());
+	public @ResponseBody String getUsers() {
+		return userRepository.doSqlParse(extractQuery());
 	}
 
 	private static String extractQuery() {

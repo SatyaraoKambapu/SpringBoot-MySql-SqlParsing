@@ -1,29 +1,25 @@
 package com.example.demo;
 
-import java.util.List;
+import java.text.ParseException;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 @Transactional
 public class UserRepositoryCustomImpl implements UserRepositoryCustom {
-
 	@Autowired
-	JdbcTemplate jdbcTemplate;
+	SqlParser sqlParser;
 
 	/**
 	 * To get all email from the DB
+	 * 
+	 * @throws ParseException
 	 */
 	@Override
-	public List<String> sqlParseAndGetResults(String sqlQuery) {
-		/*
-		 * Query query = entityManager.createQuery(sqlQuery); return
-		 * query.getResultList();
-		 */
-		return jdbcTemplate.queryForList(sqlQuery, String.class);
+	public String doSqlParse(String sqlQuery) {
+		return sqlParser.parse(sqlQuery);
 	}
 
 }
